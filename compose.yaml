@@ -1,0 +1,6 @@
+services:
+  unduckified:
+    image: "ghcr.io/gabe565/unduckified"
+    build: "."
+    ports:
+      - "80:8080"

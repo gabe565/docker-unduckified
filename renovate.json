@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>gabe565/renovate-config",
+    ":automergeAll"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["Dockerfile", "^\\.github/workflows/", "README.md"],
+      "matchStrings": [
+        "\\s*UNDUCKIFIED_REPO: +(?<depName>.+)\\n\\s*UNDUCKIFIED_REF: +(?<currentValue>.+)",
+        "ARG +UNDUCKIFIED_REPO=(?<depName>.+)\\nARG +UNDUCKIFIED_REF=(?<currentValue>.+)",
+        "<!--renovate repo=(?<depName>.+) -->\\n.*\\/Version-(?<currentValue>.+?)-"
+      ],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

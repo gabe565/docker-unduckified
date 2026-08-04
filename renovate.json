@@ -13,6 +13,14 @@
         "<!--renovate repo=(?<depName>.+) -->\\n.*\\/Version-(?<currentValue>.+?)-"
       ],
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\nARG \\w+=(?<currentValue>\\S+)"
+      ],
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "^v(?<version>.+)$"
     }
   ]
 }

@@ -1,2 +1,6 @@
-**
-!nginx.conf
+.git/
+.github/
+.idea/
+README.md
+compose.yaml
+renovate.json
